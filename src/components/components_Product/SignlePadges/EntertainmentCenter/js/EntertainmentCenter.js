@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { RiStarFill, RiStarHalfFill } from 'react-icons/ri'
 import { GrFormCheckmark } from 'react-icons/gr'
 import { HiPlusSm, HiMinusSm } from 'react-icons/hi'
+import { CreateAnimation } from '../../../product'
+
 const EntertainmentCenter = () => {
   const [activeImge, setActiveImge] = useState('defult')
   const [activeBtn, setActiveBtn] = useState('defultBtn')
@@ -17,7 +19,8 @@ const EntertainmentCenter = () => {
       setCountOfProduct(countOfProduct - 1)
     }
   }
-
+  // trigner infunction to aplay animation
+  CreateAnimation()
   return (
     <div className='single_padge'>
       <div className='container'>
@@ -29,42 +32,72 @@ const EntertainmentCenter = () => {
           </div>
           <div className='defult_img'>
             {activeImge === 'defult' ? (
-              <img
-                src='https://dl.airtable.com/.attachmentThumbnails/65708b701baa3a84883ad48301624b44/2de058af'
-                alt='defult'
-              />
+              <div
+                data-aos='fade-down'
+                data-aos-easing='linear'
+                data-aos-duration='1500'
+              >
+                <img
+                  src='https://dl.airtable.com/.attachmentThumbnails/65708b701baa3a84883ad48301624b44/2de058af'
+                  alt='defult'
+                />
+              </div>
             ) : (
               ''
             )}
             {activeImge === 'II_active' ? (
-              <img
-                src='https://dl.airtable.com/.attachments/f4720cc51a45ccc204f7476d51cb1b0e/eeb5fe4e/z-extra-1.jpeg'
-                alt='alt_imge'
-              />
+              <div
+                data-aos='fade-down'
+                data-aos-easing='linear'
+                data-aos-duration='1500'
+              >
+                <img
+                  src='https://dl.airtable.com/.attachments/f4720cc51a45ccc204f7476d51cb1b0e/eeb5fe4e/z-extra-1.jpeg'
+                  alt='alt_imge'
+                />
+              </div>
             ) : (
               ''
             )}
             {activeImge === 'III_active' ? (
-              <img
-                src='	https://dl.airtable.com/.attachments/a73777f8a2cbf4820ccaa6aa4349db01/c541de4b/z-extra-2.jpeg'
-                alt='alt_imge'
-              />
+              <div
+                data-aos='fade-down'
+                data-aos-easing='linear'
+                data-aos-duration='1500'
+              >
+                <img
+                  src='	https://dl.airtable.com/.attachments/a73777f8a2cbf4820ccaa6aa4349db01/c541de4b/z-extra-2.jpeg'
+                  alt='alt_imge'
+                />
+              </div>
             ) : (
               ''
             )}
             {activeImge === 'IV_active' ? (
-              <img
-                src='	https://dl.airtable.com/.attachments/7a50daf83875879b373d91ebb9bb6012/c1695f7e/z-extra-3.jpeg'
-                alt='alt_imge'
-              />
+              <div
+                data-aos='fade-down'
+                data-aos-easing='linear'
+                data-aos-duration='1500'
+              >
+                <img
+                  src='	https://dl.airtable.com/.attachments/7a50daf83875879b373d91ebb9bb6012/c1695f7e/z-extra-3.jpeg'
+                  alt='alt_imge'
+                />
+              </div>
             ) : (
               ''
             )}
             {activeImge === 'IIV_active' ? (
-              <img
-                src='https://dl.airtable.com/.attachments/5592998dcaee77b12c50bda63dd94d06/6ad61540/z-extra-4.jpeg'
-                alt='alt_imge'
-              />
+              <div
+                data-aos='fade-down'
+                data-aos-easing='linear'
+                data-aos-duration='1500'
+              >
+                <img
+                  src='https://dl.airtable.com/.attachments/5592998dcaee77b12c50bda63dd94d06/6ad61540/z-extra-4.jpeg'
+                  alt='alt_imge'
+                />
+              </div>
             ) : (
               ''
             )}
@@ -144,10 +177,23 @@ const EntertainmentCenter = () => {
               <p>colors :</p>
               <div className='spanes'>
                 <button
-                  // onClick={() => setActiveBtn('first')}
                   className={`${activeBtn === 'defultBtn' ? 'activeBtn' : ''}`}
                 >
                   {activeBtn === 'defultBtn' ? (
+                    <i className='icon'>
+                      <GrFormCheckmark />
+                    </i>
+                  ) : (
+                    ''
+                  )}
+                </button>
+                <button
+                  onClick={() => setActiveBtn('seondeBtn')}
+                  className={`colorRed ${
+                    activeBtn === 'seondeBtn' ? 'activeBtn' : ''
+                  }`}
+                >
+                  {activeBtn === 'seondeBtn' ? (
                     <i className='icon'>
                       <GrFormCheckmark />
                     </i>
@@ -167,7 +213,9 @@ const EntertainmentCenter = () => {
                   <HiPlusSm />
                 </button>
               </div>
-              <button className='add_to_cart'>ADD TO CART</button>
+              <Link to='/cart'>
+                <button className='add_to_cart'>ADD TO CART</button>
+              </Link>{' '}
             </div>
           </div>
         </div>

@@ -8,15 +8,12 @@ const Loding = () => {
         `display:none;
       `,
       ]
-    }, 1500)
+    }, 1900)
   }, [])
   return (
     <div ref={preloader} className='preloader'>
-      <div className='preloader-inner'>
-        <div className='preloader-icon'>
-          <span></span>
-          {/* <span></span> */}
-        </div>
+      <div className='loader-wrapper'>
+        <div className='loader'></div>
       </div>
     </div>
   )

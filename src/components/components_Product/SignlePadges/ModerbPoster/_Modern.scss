@@ -121,7 +121,7 @@
               width: 1.5rem;
               height: 1.5rem;
               border-radius: 50%;
-              background: rgb(34, 34, 34);
+              background: #222222;
               margin-right: 0.5rem;
               border: none;
               cursor: pointer;
@@ -146,18 +146,27 @@
                 }
               }
             }
+
+            /* Start style buttons of single padges */
             .activeBtn {
               opacity: 1;
-              background-color: #000;
             }
-            /* Start ArmChair padge */
-            .armchair {
+            .armchair,
+            .colorGreen {
               background-color: #00ff00;
             }
-            .armchair_I {
+            .colorBlue {
               background-color: #0000ff;
             }
-            /* End ArmChair padge */
+
+            .colorRed {
+              background-color: #ff0000;
+            }
+
+            .colorYellow {
+              background-color: #ffb900;
+            }
+            /* End style buttons of single pages padge */
           }
         }
         .number_of_your_product {

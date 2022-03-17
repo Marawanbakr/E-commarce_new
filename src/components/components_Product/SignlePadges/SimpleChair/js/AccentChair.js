@@ -195,7 +195,9 @@ const SimpleChair = () => {
                   <HiPlusSm />
                 </button>
               </div>
-              <button className='add_to_cart'>ADD TO CART</button>
+              <Link to='/cart'>
+                <button className='add_to_cart'>ADD TO CART</button>
+              </Link>{' '}
             </div>
           </div>
         </div>

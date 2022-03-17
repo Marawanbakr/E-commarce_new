@@ -9,10 +9,8 @@ import HeadrShelf from '../Headr_Shelf'
 const Index = () => {
   return (
     <>
-      <Nav />
       <HeadrShelf />
       <Shelf />
-      <Footer />
     </>
   )
 }

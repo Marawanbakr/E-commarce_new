@@ -16,37 +16,48 @@ const Services = () => {
         </div>
       </div>
       <div className='container'>
-        <div className='box'>
-          <i className='icon'>
-            <GiCompass fontSize={32} />
-          </i>
-          <div className='paragraph'>
-            <h3 className='title'>Mission</h3>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit
-            autem unde numquam nisi
+        <div className='to-top' data-aos='fade-up' data-aos-duration='3000'>
+          <div className='box'>
+            <i className='icon'>
+              <GiCompass fontSize={32} />
+            </i>
+            <div className='paragraph'>
+              <h3 className='title'>Mission</h3>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum
+              velit autem unde numquam nisi
+            </div>
           </div>
         </div>
-        <div className='box'>
-          <i className='icon'>
-            <GiDiamondHard fontSize={32} />
-          </i>
-          <div className='paragraph'>
-            <h3 className='title'>Vision</h3>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit
-            autem unde numquam nisi
+        <div data-aos='zoom-out-down'>
+          <div className='box'>
+            <i className='icon'>
+              <GiDiamondHard fontSize={32} />
+            </i>
+            <div className='paragraph'>
+              <h3 className='title'>Vision</h3>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum
+              velit autem unde numquam nisi
+            </div>
           </div>
         </div>
-        <div className='box'>
-          <i className='icon'>
-            <MdHistoryEdu fontSize={32} />
-          </i>
-          <div className='paragraph'>
-            <h3 className='title'>History</h3>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit
-            autem unde numquam nisi
+        <div
+          className='updown'
+          data-aos='fade-down'
+          data-aos-easing='linear'
+          data-aos-duration='1500'
+        >
+          <div className='box'>
+            <i className='icon'>
+              <MdHistoryEdu fontSize={32} />
+            </i>
+            <div className='paragraph'>
+              <h3 className='title'>History</h3>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum
+              velit autem unde numquam nisi
+            </div>
           </div>
         </div>
       </div>

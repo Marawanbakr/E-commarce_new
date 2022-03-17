@@ -1,7 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { OurData } from './our_data'
 import { BsGridFill } from 'react-icons/bs'
 import { FaBars } from 'react-icons/fa'
+
+const CreateAnimation = () => {
+  useEffect(() => {
+    let myDiv = document.querySelector('.our_info_cadr')
+    let getContainer = document.querySelector('.single_padge .container')
+    let animatedDiv = document.createElement('div')
+    animatedDiv.setAttribute('data-aos', 'zoom-in-up')
+    animatedDiv.appendChild(myDiv)
+    getContainer.append(animatedDiv)
+  }, [])
+  return false
+}
+export { CreateAnimation }
 
 const Product = () => {
   const [info, setInfo] = useState(OurData)
@@ -22,7 +35,6 @@ const Product = () => {
       return newCard
     })
   }
-
   const removeItemC = () => {
     setInfo((item) => {
       let newCard = item.filter((info) => info.type !== 'c')
@@ -42,23 +54,47 @@ const Product = () => {
       <div className='our_card'>
         {info.map((box) => {
           const { id, img, icon, title, price, type } = box
-          return (
-            <div className='card' key={id}>
-              <div
-                className='img'
-                onClick={() => {
-                  switchRoutes(id)
-                }}
-              >
-                <img src={img} alt='' />
-                <div className='icnos'>{icon}</div>
+          if (id % 2 === 0) {
+            return (
+              <div style={{ width: '100%' }} data-aos='zoom-in-down'>
+                <div className='card' key={id}>
+                  <div
+                    className='img'
+                    onClick={() => {
+                      switchRoutes(id)
+                    }}
+                  >
+                    <img src={img} alt='' />
+                    <div className='icnos'>{icon}</div>
+                  </div>
+                  <div className='title__info'>
+                    <p>{title}</p>
+                    <p>$ {price}</p>
+                  </div>
+                </div>
               </div>
-              <div className='title__info'>
-                <p>{title}</p>
-                <p>$ {price}</p>
+            )
+          } else {
+            return (
+              <div style={{ width: '100%' }} data-aos='zoom-in-left'>
+                <div className='card' key={id}>
+                  <div
+                    className='img'
+                    onClick={() => {
+                      switchRoutes(id)
+                    }}
+                  >
+                    <img src={img} alt='' />
+                    <div className='icnos'>{icon}</div>
+                  </div>
+                  <div className='title__info'>
+                    <p>{title}</p>
+                    <p>$ {price}</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          )
+            )
+          }
         })}
       </div>
     )
@@ -69,35 +105,80 @@ const Product = () => {
       <div className=' our_card_row'>
         {info.map((box) => {
           const { id, img, icon, title, price, type } = box
-          return (
-            <div className='card_row' key={id}>
+          if (id % 2 === 0) {
+            return (
               <div
-                className='img_row'
-                onClick={() => {
-                  switchRoutes(id)
-                }}
+                style={{ width: '100%' }}
+                data-aos='fade-up'
+                data-aos-easing='linear'
+                data-aos-duration='1500'
               >
-                <img src={img} alt='' />
-                <div className='icnos_row'>{icon}</div>
+                <div className='card_row' key={id}>
+                  <div
+                    className='img_row'
+                    onClick={() => {
+                      switchRoutes(id)
+                    }}
+                  >
+                    <img src={img} alt='' />
+                    <div className='icnos_row'>{icon}</div>
+                  </div>
+                  <div className='title__info_row'>
+                    <h4>{title}</h4>
+                    <p className='price_row'>$ {price}</p>
+                    <p className='lorem_row'>
+                      Cloud bread VHS hell of banjo bicycle rights jianbing
+                      umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist
+                      yr dreamcatcher waistcoat, authentic ...
+                    </p>
+                    <button
+                      onClick={() => {
+                        switchRoutes(id)
+                      }}
+                    >
+                      details
+                    </button>
+                  </div>
+                </div>
               </div>
-              <div className='title__info_row'>
-                <h4>{title}</h4>
-                <p className='price_row'>$ {price}</p>
-                <p className='lorem_row'>
-                  Cloud bread VHS hell of banjo bicycle rights jianbing umami
-                  mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr
-                  dreamcatcher waistcoat, authentic ...
-                </p>
-                <button
-                  onClick={() => {
-                    switchRoutes(id)
-                  }}
-                >
-                  details
-                </button>
+            )
+          } else {
+            return (
+              <div
+                data-aos='fade-down'
+                data-aos-easing='linear'
+                data-aos-duration='1500'
+              >
+                <div className='card_row' key={id}>
+                  <div
+                    className='img_row'
+                    onClick={() => {
+                      switchRoutes(id)
+                    }}
+                  >
+                    <img src={img} alt='' />
+                    <div className='icnos_row'>{icon}</div>
+                  </div>
+                  <div className='title__info_row'>
+                    <h4>{title}</h4>
+                    <p className='price_row'>$ {price}</p>
+                    <p className='lorem_row'>
+                      Cloud bread VHS hell of banjo bicycle rights jianbing
+                      umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist
+                      yr dreamcatcher waistcoat, authentic ...
+                    </p>
+                    <button
+                      onClick={() => {
+                        switchRoutes(id)
+                      }}
+                    >
+                      details
+                    </button>
+                  </div>
+                </div>
               </div>
-            </div>
-          )
+            )
+          }
         })}
       </div>
     )
@@ -163,7 +244,7 @@ const Product = () => {
         window.location = '/products/Sofa_Set'
         break
       case id === 20:
-        window.location = '/products/Wooden_Desk'
+        window.location = '/products/Wooden_Desk_2'
         break
       case id === 21:
         window.location = '/products/Wooden_Table'
@@ -176,6 +257,51 @@ const Product = () => {
         break
     }
   }
+  const defultValueInput = useRef(null)
+  const defultTextSearch = useRef(null)
+
+  const NotFonudProduct = () => {
+    return (
+      <h5
+        style={{
+          fontSize: '1rem',
+          letterSpacing: '0.1rem',
+          lineHeight: '1.25',
+          marginBottom: '0.75rem',
+        }}
+      >
+        Sorry, no products matched your search.
+      </h5>
+    )
+  }
+  const handleOnChangeInput = (e) => {
+    e.preventDefault()
+    let currentValueInput = defultValueInput.current.value
+    // to update new value of input
+    setInput(currentValueInput)
+    // do filtter when value equal or lowest list of price
+    setInfo((item) => {
+      let newCard = item.filter(function (list) {
+        return currentValueInput >= list.price
+      })
+      return newCard
+    })
+  }
+  const handleOnChangeSearch = (e) => {
+    e.preventDefault()
+    let currentTextOfSearch = defultTextSearch.current.value
+    // To Update New TextValue of Search
+    setValue(currentTextOfSearch)
+    // do filtter when text containe any words
+    if (currentTextOfSearch !== null) {
+      setInfo((item) => {
+        let newItems = item.filter(function (data) {
+          return data.title.includes(currentTextOfSearch)
+        })
+        return newItems
+      })
+    } else return false
+  }
 
   return (
     <div className='product'>
@@ -185,19 +311,8 @@ const Product = () => {
             type='search'
             placeholder='Search'
             value={valueText}
-            onInput={(e) =>
-              setInfo((item) => {
-                setValue(e.target.value)
-                // let newItems = item.filter(
-                //   (data) => data.title.includes(e.target.value) === true
-                // )
-                let newItems = item.filter(function (data) {
-                  console.log(data.title.includes(e.target.value))
-                  return data.title.includes(e.target.value)
-                })
-                return newItems
-              })
-            }
+            ref={defultTextSearch}
+            onInput={handleOnChangeSearch}
           />
           <div className='our_category'>
             <h4>Category</h4>
@@ -240,39 +355,9 @@ const Product = () => {
               max={3099}
               type='range'
               value={Number(input)}
-              // onInput={(e) => setInput(e.target.value)}
-              onInput={(e) =>
-                setInfo((itm) => {
-                  setInput(e.target.value)
-                  /* this is arrow function */
-                  // let newItems = item.filter((data) => data.price <= input)
-                  console.log(`itm ${itm}`)
-                  let dataPrice = itm.price
-                  let inputValue = Number(e.target.value)
-                  /* this is anonymous function */
-                  let newItemsHeigher = [...itm].filter(function (data) {
-                    console.log(dataPrice)
-                    console.log(inputValue)
-                    if (dataPrice >= inputValue) {
-                      return data
-                    }
-                  })
-                  let newItemsLower = [...itm].filter(function (data) {
-                    console.log(dataPrice)
-                    console.log(inputValue)
-                    if (dataPrice < inputValue) {
-                      return data
-                    }
-                  })
-                  if (dataPrice < inputValue) {
-                    return newItemsLower
-                  } else if (dataPrice >= inputValue) {
-                    return newItemsHeigher
-                  }
-
-                  // return newItems
-                })
-              }
+              ref={defultValueInput}
+              onInput={handleOnChangeInput}
+              step='1'
             />
           </div>
           <div className='selcet'>
@@ -311,6 +396,7 @@ const Product = () => {
               </select>
             </div>
           </div>
+          {info.length === 0 ? <NotFonudProduct /> : null}
           {column && <DisplayColumn />}
           {column || <DisplayRow />}
         </div>

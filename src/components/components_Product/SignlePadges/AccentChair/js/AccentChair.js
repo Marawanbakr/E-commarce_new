@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-
 import { RiStarFill } from 'react-icons/ri'
 import { GrFormCheckmark } from 'react-icons/gr'
 import { HiPlusSm, HiMinusSm } from 'react-icons/hi'
+import { CreateAnimation } from '../../../product'
 const AccentChair = () => {
   const [activeImge, setActiveImge] = useState('defult')
   const [activeBtn, setActiveBtn] = useState('defultBtn')
   const [countOfProduct, setCountOfProduct] = useState(1)
+  const [store, setStore] = useState([])
 
   const Increase = () => {
     setCountOfProduct(countOfProduct + 1)
@@ -17,6 +18,14 @@ const AccentChair = () => {
       setCountOfProduct(countOfProduct - 1)
     }
   }
+  // const handleClike = () => {
+  window.addEventListener('click', (e) => {
+    if (e.target.className === 'active') {
+      store.push(e.target)
+    }
+  })
+  // trigner infunction to aplay animation
+  CreateAnimation()
 
   return (
     <div className='single_padge'>
@@ -27,48 +36,79 @@ const AccentChair = () => {
               <button className='back_to_home'>back to products</button>
             </Link>
           </div>
-          <div className='defult_img'>
+          <div className='defult_img '>
             {activeImge === 'defult' ? (
-              <img
-                src='https://dl.airtable.com/.attachmentThumbnails/e8bc3791196535af65f40e36993b9e1f/438bd160'
-                alt='defult'
-              />
+              <div
+                data-aos='fade-down'
+                data-aos-easing='linear'
+                data-aos-duration='1500'
+              >
+                <img
+                  src='https://dl.airtable.com/.attachmentThumbnails/e8bc3791196535af65f40e36993b9e1f/438bd160'
+                  alt='defult'
+                />
+              </div>
             ) : (
               ''
             )}
             {activeImge === 'II_active' ? (
-              <img
-                src='https://dl.airtable.com/.attachments/f4720cc51a45ccc204f7476d51cb1b0e/eeb5fe4e/z-extra-1.jpeg'
-                alt='alt_imge'
-              />
+              <div
+                data-aos='fade-down'
+                data-aos-easing='linear'
+                data-aos-duration='1500'
+              >
+                <img
+                  src='https://dl.airtable.com/.attachments/f4720cc51a45ccc204f7476d51cb1b0e/eeb5fe4e/z-extra-1.jpeg'
+                  alt='alt_imge'
+                />
+              </div>
             ) : (
               ''
             )}
             {activeImge === 'III_active' ? (
-              <img
-                src='	https://dl.airtable.com/.attachments/a73777f8a2cbf4820ccaa6aa4349db01/c541de4b/z-extra-2.jpeg'
-                alt='alt_imge'
-              />
+              <div
+                data-aos='fade-down'
+                data-aos-easing='linear'
+                data-aos-duration='1500'
+              >
+                <img
+                  src='	https://dl.airtable.com/.attachments/a73777f8a2cbf4820ccaa6aa4349db01/c541de4b/z-extra-2.jpeg'
+                  alt='alt_imge'
+                />
+              </div>
             ) : (
               ''
             )}
             {activeImge === 'IV_active' ? (
-              <img
-                src='	https://dl.airtable.com/.attachments/7a50daf83875879b373d91ebb9bb6012/c1695f7e/z-extra-3.jpeg'
-                alt='alt_imge'
-              />
+              <div
+                data-aos='fade-down'
+                data-aos-easing='linear'
+                data-aos-duration='1500'
+              >
+                <img
+                  src='	https://dl.airtable.com/.attachments/7a50daf83875879b373d91ebb9bb6012/c1695f7e/z-extra-3.jpeg'
+                  alt='alt_imge'
+                />
+              </div>
             ) : (
               ''
             )}
             {activeImge === 'IIV_active' ? (
-              <img
-                src='	https://dl.airtable.com/.attachments/5592998dcaee77b12c50bda63dd94d06/6ad61540/z-extra-4.jpeg'
-                alt='alt_imge'
-              />
+              <div
+                data-aos='fade-down'
+                data-aos-easing='linear'
+                data-aos-duration='1500'
+              >
+                <img
+                  src='	https://dl.airtable.com/.attachments/5592998dcaee77b12c50bda63dd94d06/6ad61540/z-extra-4.jpeg'
+                  alt='alt_imge'
+                />
+              </div>
             ) : (
               ''
             )}
           </div>
+
           <div className='gallery'>
             <img
               onClick={() => setActiveImge('defult')}
@@ -76,7 +116,6 @@ const AccentChair = () => {
               src='https://dl.airtable.com/.attachmentThumbnails/e8bc3791196535af65f40e36993b9e1f/438bd160'
               alt=''
             />
-
             <img
               onClick={() => setActiveImge('II_active')}
               className={`${activeImge === 'II_active' ? 'active' : ''}`}
@@ -113,6 +152,7 @@ const AccentChair = () => {
               <RiStarFill />
               <RiStarFill />
             </div>
+
             <p>(33 customer reviews)</p>
           </div>
           <h5 className='price'>$259.99</h5>
@@ -145,7 +185,9 @@ const AccentChair = () => {
               <div className='spanes'>
                 <button
                   onClick={() => setActiveBtn('defultBtn')}
-                  className={`${activeBtn === 'defultBtn' ? 'activeBtn' : ''}`}
+                  className={`colorRed ${
+                    activeBtn === 'defultBtn' ? 'activeBtn' : ''
+                  }`}
                 >
                   {activeBtn === 'defultBtn' ? (
                     <i className='icon'>
@@ -195,7 +237,9 @@ const AccentChair = () => {
                   <HiPlusSm />
                 </button>
               </div>
-              <button className='add_to_cart'>ADD TO CART</button>
+              <Link to='/cart'>
+                <button className='add_to_cart'>ADD TO CART</button>
+              </Link>{' '}
             </div>
           </div>
         </div>

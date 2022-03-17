@@ -9,10 +9,8 @@ import HeadrModernBookShelf from '../Headr_ModernBookShelf'
 const Index = () => {
   return (
     <>
-      <Nav />
       <HeadrModernBookShelf />
       <ModernBookshelf />
-      <Footer />
     </>
   )
 }

@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { RiStarFill } from 'react-icons/ri'
 import { GrFormCheckmark } from 'react-icons/gr'
 import { HiPlusSm, HiMinusSm } from 'react-icons/hi'
+import { CreateAnimation } from '../../../product'
+
 const SuedeArmchair = () => {
   const [activeImge, setActiveImge] = useState('defult')
   const [activeBtn, setActiveBtn] = useState('defultBtn')
@@ -17,7 +19,8 @@ const SuedeArmchair = () => {
       setCountOfProduct(countOfProduct - 1)
     }
   }
-
+  // trigner infunction to aplay animation
+  CreateAnimation()
   return (
     <div className='single_padge'>
       <div className='container'>
@@ -29,42 +32,72 @@ const SuedeArmchair = () => {
           </div>
           <div className='defult_img'>
             {activeImge === 'defult' ? (
-              <img
-                src='https://dl.airtable.com/.attachmentThumbnails/1cf03bfcee117bd92273d996a82a1534/47ef57c7'
-                alt='defult'
-              />
+              <div
+                data-aos='fade-down'
+                data-aos-easing='linear'
+                data-aos-duration='1500'
+              >
+                <img
+                  src='https://dl.airtable.com/.attachmentThumbnails/1cf03bfcee117bd92273d996a82a1534/47ef57c7'
+                  alt='defult'
+                />
+              </div>
             ) : (
               ''
             )}
             {activeImge === 'II_active' ? (
-              <img
-                src='https://dl.airtable.com/.attachments/f4720cc51a45ccc204f7476d51cb1b0e/eeb5fe4e/z-extra-1.jpeg'
-                alt='alt_imge'
-              />
+              <div
+                data-aos='fade-down'
+                data-aos-easing='linear'
+                data-aos-duration='1500'
+              >
+                <img
+                  src='https://dl.airtable.com/.attachments/f4720cc51a45ccc204f7476d51cb1b0e/eeb5fe4e/z-extra-1.jpeg'
+                  alt='alt_imge'
+                />
+              </div>
             ) : (
               ''
             )}
             {activeImge === 'III_active' ? (
-              <img
-                src='	https://dl.airtable.com/.attachments/a73777f8a2cbf4820ccaa6aa4349db01/c541de4b/z-extra-2.jpeg'
-                alt='alt_imge'
-              />
+              <div
+                data-aos='fade-down'
+                data-aos-easing='linear'
+                data-aos-duration='1500'
+              >
+                <img
+                  src='	https://dl.airtable.com/.attachments/a73777f8a2cbf4820ccaa6aa4349db01/c541de4b/z-extra-2.jpeg'
+                  alt='alt_imge'
+                />
+              </div>
             ) : (
               ''
             )}
             {activeImge === 'IV_active' ? (
-              <img
-                src='	https://dl.airtable.com/.attachments/7a50daf83875879b373d91ebb9bb6012/c1695f7e/z-extra-3.jpeg'
-                alt='alt_imge'
-              />
+              <div
+                data-aos='fade-down'
+                data-aos-easing='linear'
+                data-aos-duration='1500'
+              >
+                <img
+                  src='	https://dl.airtable.com/.attachments/7a50daf83875879b373d91ebb9bb6012/c1695f7e/z-extra-3.jpeg'
+                  alt='alt_imge'
+                />
+              </div>
             ) : (
               ''
             )}
             {activeImge === 'IIV_active' ? (
-              <img
-                src='	https://dl.airtable.com/.attachments/5592998dcaee77b12c50bda63dd94d06/6ad61540/z-extra-4.jpeg'
-                alt='alt_imge'
-              />
+              <div
+                data-aos='fade-down'
+                data-aos-easing='linear'
+                data-aos-duration='1500'
+              >
+                <img
+                  src='	https://dl.airtable.com/.attachments/5592998dcaee77b12c50bda63dd94d06/6ad61540/z-extra-4.jpeg'
+                  alt='alt_imge'
+                />
+              </div>
             ) : (
               ''
             )}
@@ -113,7 +146,7 @@ const SuedeArmchair = () => {
               <RiStarFill />
               <RiStarFill />
             </div>
-            <p>(33 customer reviews)</p>
+            <p>(10 customer reviews)</p>
           </div>
           <h5 className='price'>$159.99</h5>
           <p className='lorem'>
@@ -131,11 +164,11 @@ const SuedeArmchair = () => {
             </div>
             <div className='I'>
               <span>SKU :</span>
-              <p>Recd1jIVIEChmiwhe</p>
+              <p>RecroK1VD8qVdMP5H</p>
             </div>
             <div className='I'>
               <span>Brand :</span>
-              <p>Marcos</p>
+              <p>Caressa</p>
             </div>
           </div>
           <hr className='line'></hr>
@@ -145,37 +178,9 @@ const SuedeArmchair = () => {
               <div className='spanes'>
                 <button
                   onClick={() => setActiveBtn('defultBtn')}
-                  className={`${activeBtn === 'defultBtn' ? 'activeBtn' : ''}`}
+                  className={`${activeBtn === 'defultBtn' ? 'colorRed' : ''}`}
                 >
                   {activeBtn === 'defultBtn' ? (
-                    <i className='icon'>
-                      <GrFormCheckmark />
-                    </i>
-                  ) : (
-                    ''
-                  )}
-                </button>
-                <button
-                  onClick={() => setActiveBtn('secondBtnArm')}
-                  className={`armchair ${
-                    activeBtn === 'secondBtnArm' ? 'activeBtn' : ''
-                  }`}
-                >
-                  {activeBtn === 'secondBtnArm' ? (
-                    <i className='icon'>
-                      <GrFormCheckmark />
-                    </i>
-                  ) : (
-                    ''
-                  )}
-                </button>
-                <button
-                  onClick={() => setActiveBtn('thirdBtnArm')}
-                  className={`armchair_I ${
-                    activeBtn === 'thirdBtnArm' ? 'activeBtn' : ''
-                  }`}
-                >
-                  {activeBtn === 'thirdBtnArm' ? (
                     <i className='icon'>
                       <GrFormCheckmark />
                     </i>
@@ -195,7 +200,9 @@ const SuedeArmchair = () => {
                   <HiPlusSm />
                 </button>
               </div>
-              <button className='add_to_cart'>ADD TO CART</button>
+              <Link to='/cart'>
+                <button className='add_to_cart'>ADD TO CART</button>
+              </Link>{' '}
             </div>
           </div>
         </div>

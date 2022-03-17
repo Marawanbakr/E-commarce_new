@@ -175,7 +175,7 @@ export const OurData = [
   },
   {
     id: 20,
-    img: '  	https://dl.airtable.com/.attachmentThumbnails/e8c2f821d05b9e4e5aa450a19e62ffa5/271fc3f5',
+    img: '  	https://dl.airtable.com/.attachments/cd9dfe653b77751934596c4673285a59/edba7565/wooden-desk.jpeg',
     icon: <FaSearch />,
     title: 'Wooden Desk',
     price: 234.99,
@@ -184,7 +184,7 @@ export const OurData = [
   },
   {
     id: 21,
-    img: 'https://dl.airtable.com/.attachmentThumbnails/e3fa7aa6dc112c4998da18bb401bd70f/61e2fb5e',
+    img: 'https://dl.airtable.com/.attachmentThumbnails/e8c2f821d05b9e4e5aa450a19e62ffa5/271fc3f5',
     icon: <FaSearch />,
     title: 'Wooden table',
     price: 2349.99,

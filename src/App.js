@@ -1,10 +1,13 @@
 import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import MainHome from './our_padges/mainhome/MainHome'
 import AboutPadge from './our_padges/about/about_padge'
 import NavLinksMopile from './components/components_Home/nav/navMoplie'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ProductPage from './our_padges/product/product_page'
+import CartPadge from './our_padges/cart/'
 import Progress from './progressbar/index'
+import Nav from './components/components_Home/nav'
+import Footer from './components/components_Home/footer'
 /* Start import Single Padges */
 import ModernPoster from './components/components_Product/SignlePadges/ModerbPoster/js'
 import BarStool from './components/components_Product/SignlePadges/BarStool/js'
@@ -29,17 +32,21 @@ import WoodenDesk0 from './components/components_Product/SignlePadges/WoodenDesk
 import WoodenTable from './components/components_Product/SignlePadges/WoodenTable/js'
 import WoodenBed from './components/components_Product/SignlePadges/WoodenBed/js'
 import AlbanyTable from './components/components_Product/SignlePadges/AlbanyTable/js'
+
 /* End import Single Padges */
 const App = () => {
   return (
     <div className='App'>
       <Progress />
       <BrowserRouter>
+        <Nav />
         <Routes>
           <Route path='/' element={<MainHome />}></Route>
           <Route path='/about' element={<AboutPadge />}></Route>
           <Route path='/NavLinksMopile' element={<NavLinksMopile />}></Route>
           <Route path='/products' element={<ProductPage />}></Route>
+          <Route path='/cart' element={<CartPadge />}></Route>
+
           {/* Start Routes For Single Padges In Product */}
           <Route
             path='/products/Modern_Poster'
@@ -109,6 +116,7 @@ const App = () => {
           ></Route>
           {/* End Routes For Single Padges In Product */}
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   )

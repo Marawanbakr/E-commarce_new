@@ -9,10 +9,8 @@ import HeadrSimpleChair from '../Headr_SimpleChair'
 const Index = () => {
   return (
     <>
-      <Nav />
       <HeadrSimpleChair />
       <SimpleChair />
-      <Footer />
     </>
   )
 }

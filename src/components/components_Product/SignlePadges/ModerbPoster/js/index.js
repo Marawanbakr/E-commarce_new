@@ -9,10 +9,8 @@ import HeadrModern from '../headr_Modern'
 const index = () => {
   return (
     <>
-      <Nav />
       <HeadrModern />
       <ModernPoster />
-      <Footer />
     </>
   )
 }
