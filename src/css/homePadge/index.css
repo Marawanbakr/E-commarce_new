@@ -998,6 +998,11 @@ nav > .container .nav_icons .icon p {
   margin-bottom: 1.25rem;
 }
 
+.product .container .left_card_category .our_category .our_button .active {
+  position: relative;
+  border-bottom: 1px solid #617d98;
+}
+
 @media (max-width: 767px) {
   .product .container .left_card_category .our_company select {
     width: -webkit-fit-content;

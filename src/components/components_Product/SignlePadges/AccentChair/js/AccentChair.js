@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, createContext } from 'react'
 import { Link } from 'react-router-dom'
 import { RiStarFill } from 'react-icons/ri'
 import { GrFormCheckmark } from 'react-icons/gr'
@@ -8,7 +8,6 @@ const AccentChair = () => {
   const [activeImge, setActiveImge] = useState('defult')
   const [activeBtn, setActiveBtn] = useState('defultBtn')
   const [countOfProduct, setCountOfProduct] = useState(1)
-  const [store, setStore] = useState([])
 
   const Increase = () => {
     setCountOfProduct(countOfProduct + 1)
@@ -18,12 +17,6 @@ const AccentChair = () => {
       setCountOfProduct(countOfProduct - 1)
     }
   }
-  // const handleClike = () => {
-  window.addEventListener('click', (e) => {
-    if (e.target.className === 'active') {
-      store.push(e.target)
-    }
-  })
   // trigner infunction to aplay animation
   CreateAnimation()
 
@@ -108,7 +101,6 @@ const AccentChair = () => {
               ''
             )}
           </div>
-
           <div className='gallery'>
             <img
               onClick={() => setActiveImge('defult')}

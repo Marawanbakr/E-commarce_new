@@ -168,7 +168,7 @@ const HighBackBench = () => {
             </div>
             <div className='I'>
               <span>Brand :</span>
-              <p>Ikea</p>
+              <p>ikea</p>
             </div>
           </div>
           <hr className='line'></hr>
