@@ -1,21 +1,37 @@
-import React, { useState, createContext } from 'react'
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { RiStarFill } from 'react-icons/ri'
 import { GrFormCheckmark } from 'react-icons/gr'
 import { HiPlusSm, HiMinusSm } from 'react-icons/hi'
 import { CreateAnimation } from '../../../product'
+import {
+  decrementAction,
+  incrementAction,
+  defultImg,
+} from '../../../../../redux/action/counterAction'
 const AccentChair = () => {
   const [activeImge, setActiveImge] = useState('defult')
   const [activeBtn, setActiveBtn] = useState('defultBtn')
-  const [countOfProduct, setCountOfProduct] = useState(1)
+  // to make the action called the reducer
+  const deispatch = useDispatch()
+  // this is arrow function and useSelector get the state insert the reducer
+  // const countState = useSelector((state) => state.count)
+  const countState = useSelector((state) => state.count)
+  // const imgState = useSelector((state) => state.img)
 
   const Increase = () => {
-    setCountOfProduct(countOfProduct + 1)
+    deispatch(incrementAction())
   }
-  const decrease = () => {
-    if (countOfProduct >= 2) {
-      setCountOfProduct(countOfProduct - 1)
-    }
+  // const change = () => {
+  //   deispatch(defultImg())
+  // }
+  const decrease = (vl) => {
+    // --- old method
+    // deispatch({
+    //   type: DECREMENT
+    // })
+    deispatch(decrementAction(vl))
   }
   // trigner infunction to aplay animation
   CreateAnimation()
@@ -222,9 +238,9 @@ const AccentChair = () => {
             <div className='number_of_your_product'>
               <div className='count'>
                 <button>
-                  <HiMinusSm onClick={() => decrease()} />
+                  <HiMinusSm onClick={() => decrease(1)} />
                 </button>
-                <h2>{countOfProduct}</h2>
+                <h2>{countState}</h2>
                 <button onClick={() => Increase()}>
                   <HiPlusSm />
                 </button>

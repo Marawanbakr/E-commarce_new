@@ -37,7 +37,7 @@ const Product = () => {
   // i was done resolve the bug >>>  explation how to resolve it ... i hade bas a pramter in setSate and also make fillter on the same pram for reason fillter creating new array and put the items insert new array ... when i make filter on another option to get the defrance data --- the function raturn null becuse not found data you wanna to get him and to reslove the bug using another method but is not use case .. i was make setState of initail state after even i trigger the functoin ... fainaly the resolve > i make fillter on inital state "ourData"
 
   const LivingRoom = () => {
-    // this function will br delete when i cretea a dyanmic function
+    // this function will be delete when i cretea a dyanmic function
     DontUseCaseClearCategory()
     setAcive('living-room')
     setInfo(() => {
@@ -238,74 +238,74 @@ const Product = () => {
   }
   // fnction Switch to handle Routes
   const switchRoutes = (id) => {
-    switch (true) {
-      case id === 1:
+    switch (id) {
+      case 1:
         window.location = '/products/Modern_Poster'
         break
-      case id === 2:
+      case 2:
         window.location = '/products/Bar_Stool'
         break
-      case id === 3:
+      case 3:
         window.location = '/products/Armchair'
         break
-      case id === 4:
+      case 4:
         window.location = '/products/Suede_Armchair'
         break
-      case id === 5:
+      case 5:
         window.location = '/products/Leather_Chair'
         break
-      case id === 6:
+      case 6:
         window.location = '/products/Emperor_Bed'
         break
-      case id === 7:
+      case 7:
         window.location = '/products/Accent_Chair'
         break
-      case id === 8:
+      case 8:
         window.location = '/products/Shelf'
         break
-      case id === 9:
+      case 9:
         window.location = '/products/Modern_Bookshelf'
         break
-      case id === 10:
+      case 10:
         window.location = '/products/High_Back_Bench'
         break
-      case id === 11:
+      case 11:
         window.location = '/products/Wooden_Desk'
         break
-      case id === 12:
+      case 12:
         window.location = '/products/Dining_Table'
         break
-      case id === 13:
+      case 13:
         window.location = '/products/Entertainment_Center'
         break
-      case id === 14:
+      case 14:
         window.location = '/products/UtopiaSofa'
         break
-      case id === 15:
+      case 15:
         window.location = '/products/Leather_Sofa'
         break
-      case id === 16:
+      case 16:
         window.location = '/products/Albany_Sectional'
         break
-      case id === 17:
+      case 17:
         window.location = '/products/Simple_Chair'
         break
-      case id === 18:
+      case 18:
         window.location = '/products/Vase_Table'
         break
-      case id === 19:
+      case 19:
         window.location = '/products/Sofa_Set'
         break
-      case id === 20:
+      case 20:
         window.location = '/products/Wooden_Desk_2'
         break
-      case id === 21:
+      case 21:
         window.location = '/products/Wooden_Table'
         break
-      case id === 22:
+      case 22:
         window.location = '/products/Wooden_Bed'
         break
-      case id === 23:
+      case 23:
         window.location = '/products/Albany_Table'
         break
       default:
@@ -353,6 +353,16 @@ const Product = () => {
       })
     }
   }
+  const handleOnChangeInput = () => {
+    // DontUseCaseClearPrice()
+    let currentValueInput = defultValueInput.current.value
+    // to update new value of input
+    setInput(currentValueInput)
+    // do filtter when value equal or lowest list of price
+    setInfo(() => {
+      return OurData.filter((list) => currentValueInput >= list.price)
+    })
+  }
   // update the state of a function when i selected value of option brand
   function UpdateState() {
     let currentValueBrand = BrandValue.current.value
@@ -362,13 +372,15 @@ const Product = () => {
   const SelectBrandBox = () => {
     DontUseCaseClearCompany()
     if (brand === 'marcos') {
+      handleOnChangeInput()
       setInfo(() => {
-        let newArr = OurData.filter((list) => list.brand === 'marcos')
+        let newArr = info.filter((list) => list.brand === 'marcos')
         return newArr
       })
     } else if (brand === 'ikea') {
+      handleOnChangeInput()
       setInfo(() => {
-        let newArr = OurData.filter((list) => list.brand === 'ikea')
+        let newArr = info.filter((list) => list.brand === 'ikea')
         return newArr
       })
     } else if (brand === 'lidy') {
@@ -401,17 +413,6 @@ const Product = () => {
     )
   }
   // when the client change the input price radio as son  you will show any product fit with your price
-
-  const handleOnChangeInput = (e) => {
-    // DontUseCaseClearPrice()
-    let currentValueInput = defultValueInput.current.value
-    // to update new value of input
-    setInput(currentValueInput)
-    // do filtter when value equal or lowest list of price
-    setInfo(() => {
-      return OurData.filter((list) => currentValueInput >= list.price)
-    })
-  }
 
   // when the client insert any word on input search  as son you will show any product fit with your word search
   const handleOnChangeSearch = (e) => {
